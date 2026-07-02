@@ -1,0 +1,8 @@
+cmd do windows
+
+cd \wamp64\www\web-project-iefp-python-flash-pokemon
+
+python -m venv venv -> criar a pasta venv
+
+venv\Scripts\activate
+
