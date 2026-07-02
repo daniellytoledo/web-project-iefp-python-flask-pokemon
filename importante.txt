@@ -4,7 +4,8 @@ cd \wamp64\www\web-project-iefp-python-flash-pokemon
 PASSO A PASSO (
     1. criar env pelo cmd  -> python -m venv venv
     2. ativar o venv       -> venv\Scripts\activate
-    3. criar a estrutura   -> (
+    3. instalar o  
+    4. criar a estrutura   -> (
 
         projeto 
         │

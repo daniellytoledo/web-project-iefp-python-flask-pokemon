@@ -13,3 +13,16 @@ def conectar_pymysql():
         autocommit=False,
         cursorclass=pymysql.cursors.DictCursor
     )
+
+def teste ():
+    sql = "SELECT * FROM pokemon_cards"
+    conexao = conectar_pymysql
+    cursor = conexao.cursor()
+    cursor.execute(sql)
+
+    resultado = cursor.fetchall()
+
+    return resultado
+
+if __name__ == "__main__":
+    print(teste())
