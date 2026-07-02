@@ -1,8 +1,39 @@
-cmd do windows
-
+ACESSAR O CMD DO WINDOWS E ENTRAR NA PASTA DO PROJETO:
 cd \wamp64\www\web-project-iefp-python-flash-pokemon
 
-python -m venv venv -> criar a pasta venv
+PASSO A PASSO (
+    1. criar env pelo cmd  -> python -m venv venv
+    2. ativar o venv       -> venv\Scripts\activate
+    3. criar a estrutura   -> (
 
-venv\Scripts\activate
+        projeto 
+        │
+        ├── app/
+        │   ├── models/
+        │   │   ├── rep_nome_db 
+        │   ├── routes/
+        │   │   ├── rt_nome_db
+        │   ├── services/
+        │   │   ├── srv_nome_db 
+        │   ├── static/
+        │   │   ├── css/
+        │   │   ├── fonts/
+        │   │   ├── imgs/
+        │   │   ├── js/
+        │   ├── templates/
+        │   │
+        │   ├── __init__.py
+        │   │
+        │   ├── bd_config.py
+        │
+        ├── venv/ # já foi criado no passo 1
+        │
+        ├── run.py
+        │
+        ├── .env
+        │ 
+        ├── .gitignore
 
+
+    )
+)
