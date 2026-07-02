@@ -37,10 +37,13 @@ PASSO A PASSO (
         │ 
         ├── .gitignore
 
-    7. 
+    7. Criar rotas, serviços, models
+    8. Criar templates
 
     )
 )
 
 CRIAR LINK LOCALHOST NO CMD PARA WEB:
 python run.py
+
+-> CONTINUAR EDITANDO srv, rt e rep de POKEMON_CARDS 
