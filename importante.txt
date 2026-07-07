@@ -45,6 +45,8 @@ PASSO A PASSO (
 
         models   -> [consulta/atualiza o banco (representam e manipulam a manipulação de dados da aplicação (as tabelas de dados), buscam ou salvam dados no banco)] 
 
+        Routes recebem → Services processam → Models acessam os dados.
+
     )
 
     8. Criar templates (
@@ -63,5 +65,4 @@ CRIAR LINK LOCALHOST NO CMD PARA WEB:
 python run.py
 
 -> CONTINUAR EDITANDO srv, rt e rep de POKEMON_CARDS 
-
--> 
+-> !!! colocar o degrade no background ao invés do header e footer pra ver se fica bom
