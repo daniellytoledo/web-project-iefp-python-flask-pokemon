@@ -54,6 +54,8 @@ PASSO A PASSO (
         -> e outras 
     )
 
+    9. python run.py no cmd para gerar o link para acessar no navegador
+
     )
 )
 

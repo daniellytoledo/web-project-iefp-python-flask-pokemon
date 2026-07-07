@@ -11,6 +11,7 @@ def select_cards():
             c.name_c,
             c.desc_c,
             c.hp_c,
+            c.img_c,
             t.name_t
         FROM tbl_cards c
         INNER JOIN tbl_types t ON c.id_t = t.id_t
@@ -34,6 +35,7 @@ def select_card_id(card_id):
             c.name_c,
             c.desc_c,
             c.hp_c,
+            c.img_c,
             t.name_t
         FROM tbl_cards c
         INNER JOIN tbl_types t ON c.id_t = t.id_t
