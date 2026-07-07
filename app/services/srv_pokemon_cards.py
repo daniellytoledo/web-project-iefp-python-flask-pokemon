@@ -1,4 +1,4 @@
-from app.models.rep_pokemon_cards import select_cards, select_card_id
+from app.models.rep_pokemon_cards import select_cards, select_card_id, select_types
 from pprint import pprint
 
 def lista_cards():
@@ -6,3 +6,6 @@ def lista_cards():
 
 def detalhes_card(card_id):
     return select_card_id(card_id)
+
+def lista_tipos():
+    return select_types()
