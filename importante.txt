@@ -2,7 +2,7 @@ ACESSAR O CMD DO WINDOWS E ENTRAR NA PASTA DO PROJETO:
 cd \wamp64\www\web-project-iefp-python-flask-pokemon
 
 PASSO A PASSO (
-    1. criar env pelo cmd        -> python -m venv venv
+    1. criar env pelo cmd        -> python -m venv venv (só uma vez)
     2. ativar o venv             -> venv\Scripts\activate
     3. instalar o flash pelo cmd -> pip install flash
     4. instalar pymysql pelo cmd -> pip install pymysql
@@ -37,8 +37,22 @@ PASSO A PASSO (
         │ 
         ├── .gitignore
 
-    7. Criar rotas, serviços, models
-    8. Criar templates
+    7. Criar rotas, serviços, models (
+
+        rotas    -> [recebe opedido (recebem requisições HTTP, chamam os serviços e retornam a resposta para o cliente)]
+
+        serviços -> [prepara o pedido (implementam a lógica do negócio e processam as regras da aplicação, ou seja, eles decidem o que fazer)]
+
+        models   -> [consulta/atualiza o banco (representam e manipulam a manipulação de dados da aplicação (as tabelas de dados), buscam ou salvam dados no banco)] 
+
+    )
+
+    8. Criar templates (
+        -> home.html     (página inicial)
+        -> base.html     (página que pode ser usada como base para outras)
+        -> detalhes.html (página que recebe mais informações do BD)
+        -> e outras 
+    )
 
     )
 )
