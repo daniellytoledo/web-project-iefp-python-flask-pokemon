@@ -14,6 +14,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Ketchum";
+    src: url("../fonts/Ketchum.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "KetchumI";
+    src: url("../fonts/KetchumItalic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* =====================================================
    RESET BÁSICO
    ===================================================== */
@@ -57,7 +73,7 @@ header {
 #slogan {
     font-family: "PokemonHollow", cursive;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     color: white;
 }
@@ -77,7 +93,6 @@ header {
     text-decoration: none;
     color: var(--preto-suave);
     font-size: 0.85rem;
-    font-weight: 600;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 0.5rem 1.1rem;
@@ -91,6 +106,7 @@ header {
     background-color: var(--vermelho-pokebola);
     border-color: var(--vermelho-pokebola);
     color: var(--branco);
+    cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
 
 /* =====================================================
@@ -137,6 +153,7 @@ header {
     display: block;
     text-decoration: none;
     color: inherit;
+    cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
 
 /* Div reservada para a imagem do Pokémon (a acrescentar depois) */
@@ -160,20 +177,21 @@ header {
 }
 
 .titulo_card {
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-size: 1.3rem;
     padding: 0.9rem 1rem 0.2rem;
+    font-family: "KetchumI";
+    color: white;
 }
 
 .tipo {
     display: inline-block;
     margin: 0.4rem 1rem 0;
     font-size: 0.7rem;
-    font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: white;
 }
+
 
 .cards p:not(.titulo_card):not(.tipo) {
     padding: 0.6rem 1rem 1rem;
