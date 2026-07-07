@@ -5,33 +5,35 @@ adicionar pokemon
 {% endblock %}
 
 {% block intro %}
-<p class="titulo_pages">Adicionar Pokémon</p>
 {% endblock %}
 
 {% block content %}
-<div class="pokebola_fundo">
-    <div class="pokebola_topo"></div>
-    <div class="pokebola_linha"></div>
-    <div class="pokebola_base"></div>
+    <form method="POST" enctype="multipart/form-data"
+          action="{{ url_for('pokemon_cards.add_card') }}"
+          class="pokebola_fundo">
 
-    <form method="POST" enctype="multipart/form-data" action="{{ url_for('pokemon_cards.add_card') }}">
-        <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required>
-        <br>
-        <select name="ftipo" class="class-inputs" required>
-            <option value="" disabled selected>Selecione o tipo</option>
-            {% for tipo in tipos %}
-            <option value="{{ tipo.id_t }}">{{ tipo.name_t }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        <textarea type="text" name="fdesc" placeholder="Descrição" class="class-inputs" required></textarea>
-        <br>
-        <input type="file" name="fimg" accept="image/*">
+        <div class="pokebola_topo">
+            <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required>
 
-        <div>
-            <input type="submit" value="adicionar">
-            <input type="reset" value="apagar">
+            <select name="ftipo" class="class-inputs" required>
+                <option value="" disabled selected>Selecione o tipo</option>
+                {% for tipo in tipos %}
+                    <option value="{{ tipo.id_t }}">{{ tipo.name_t }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="pokebola_linha"></div>
+
+        <div class="pokebola_base">
+            <textarea name="fdesc" placeholder="Descrição" class="class-inputs" required></textarea>
+
+            <input type="file" name="fimg" accept="image/*" class="class-inputs">
+
+            <div>
+                <input type="submit" value="adicionar">
+                <input type="reset" value="apagar">
+            </div>
         </div>
     </form>
-</div>
 {% endblock %}

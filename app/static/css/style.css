@@ -200,11 +200,10 @@ header {
 }
 
 /* =====================================================
-   PÁGINA ADICIONAR
+   PÁGINA "ADICIONAR" — botões no padrão da home
    ===================================================== */
-
 .class-inputs {
-    width: 100%;
+    width: 80%;
     max-width: 380px;
     padding: 0.7rem 1rem;
     margin-bottom: 1rem;
@@ -231,7 +230,7 @@ input[type="submit"],
 input[type="reset"] {
     font-family: inherit;
     font-size: 0.85rem;
-    font-weight: 600;
+/*     font-weight: 600; */
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 0.6rem 1.6rem;
@@ -242,6 +241,7 @@ input[type="reset"] {
     cursor: pointer;
     margin-right: 0.6rem;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
  
 input[type="submit"]:hover,
@@ -253,68 +253,34 @@ input[type="reset"]:hover {
  
 /* =====================================================
    EFEITO POKÉBOLA NO FUNDO DA PÁGINA ADICIONAR
-   Estrutura esperada no HTML:
-   <div class="pokebola_fundo">
-       <div class="pokebola_topo"></div>
-       <div class="pokebola_linha"></div>
-       <div class="pokebola_base"></div>
-       <form class="form_pokebola"> ... </form>
-   </div>
+   Estrutura esperada no HTML (o <form> É o container):
    ===================================================== */
 .pokebola_fundo {
-    position: relative;
-    width: 100%;
-    max-width: 640px;
+    max-width: 440px;
     margin: 3rem auto 4rem;
-    padding: 2.5rem 1rem;
-    display: flex;
-    justify-content: center;
-}
- 
-/* Metade de CIMA da pokébola (vermelha) */
-.pokebola_topo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92%;
-    height: 160px;
-    background-color: var(--vermelho-pokebola);
     border: 4px solid var(--preto-suave);
-    border-bottom: none;
-    border-radius: 999px 999px 0 0;
-    z-index: 0;
+    border-radius: 200px 200px 200px 200px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
  
-/* Linha/faixa central preta (o "cinto" da pokébola) */
+/* Metade de CIMA (vermelha) — nome e tipo ficam aqui */
+.pokebola_topo {
+    background-color: var(--vermelho-pokebola);
+    padding: 3.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+/* Linha/faixa central preta (o "cinto" da pokébola) com o botão central */
 .pokebola_linha {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 92%;
+    position: relative;
     height: 10px;
     background-color: var(--preto-suave);
-    z-index: 1;
 }
  
-/* Metade de BAIXO da pokébola (branca) */
-.pokebola_base {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92%;
-    height: 160px;
-    background-color: var(--branco);
-    border: 4px solid var(--preto-suave);
-    border-top: none;
-    border-radius: 0 0 999px 999px;
-    z-index: 0;
-}
- 
-/* Botão central da pokébola (decorativo, some atrás do formulário) */
-.pokebola_fundo::after {
+.pokebola_linha::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -325,25 +291,16 @@ input[type="reset"]:hover {
     background-color: var(--branco);
     border: 5px solid var(--preto-suave);
     border-radius: 50%;
-    z-index: 1;
 }
  
-/* O formulário fica por CIMA de tudo, "encaixado" no meio da bola */
-.form_pokebola {
-    position: relative;
-    z-index: 2;
+/* Metade de BAIXO (branca) — descrição, imagem e botões ficam aqui */
+.pokebola_base {
     background-color: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    width: 100%;
-    max-width: 420px;
+    padding: 2.5rem 2rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
-
    
 footer {
     background: var(--degrade-er);

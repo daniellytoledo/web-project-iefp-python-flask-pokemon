@@ -62,6 +62,25 @@ def select_types():
 
     return resultado
 
+def insert_into_cards(nome, tipo, desc, img):
+    conexao = conectar_pymysql()
+    cursor = conexao.cursor()
+
+    sql = """
+        INSERT INTO tbl_cards (name_c, id_t, desc_c, img_c)
+        VALUES (%s, %s, %s, %s)
+    """
+
+    cursor.execute(sql, (nome, tipo, desc, img))
+    conexao.commit() # commit explicito, senão os dados ficam pendentes na transação
+
+    novo_id = cursor.lastrowid
+
+    cursor.close()
+    conexao.close()
+
+    return novo_id
+
 
 if __name__ == "__main__":
     pprint(select_cards())
