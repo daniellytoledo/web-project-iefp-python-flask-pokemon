@@ -1,27 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}
-    {% if dados %}
-        {{ dados.name_c }}
-    {% else %}
-        Carta não encontrada
-    {% endif %}
-{% endblock %}
-
 {% block content %}
     {% if dados %}
-        <div class="detalhes_card">
-            <h1 class="titulo_card">{{ dados.name_c }}</h1>
-            <span class="tipo">{{ dados.name_t }}</span>
-
-            <p class="descricao">{{ dados.desc_c }}</p>
-
-            <p class="hp">HP: {{ dados.hp_c }}</p>
-
-            <a href="{{ url_for('pokemon_cards.homepage') }}">&larr; Voltar</a>
+        <div class="pagina_detalhes">
+            <div class="card_detalhe">
+                <div class="imagem_card">
+                    {% if dados.img_c %}
+                        <img src="{{ url_for('static', filename='imgs/pokemon/' ~ dados.img_c) }}" alt="{{ dados.name_c }}">
+                    {% endif %}
+                </div>
+                <p class="titulo_card">{{ dados.name_c }}</p>
+                <p class="tipo">{{ dados.name_t }}</p>
+                <p class="descricao_detalhe">{{ dados.desc_c }}</p>
+                <p class="hp_detalhe">HP: {{ dados.hp_c }}</p>
+            </div>
+            <a href="{{ url_for('pokemon_cards.homepage') }}" class="link_voltar">&larr; Voltar</a>
         </div>
     {% else %}
         <p>Essa carta não foi encontrada.</p>
-        <a href="{{ url_for('pokemon_cards.homepage') }}">&larr; Voltar para a home</a>
     {% endif %}
 {% endblock %}

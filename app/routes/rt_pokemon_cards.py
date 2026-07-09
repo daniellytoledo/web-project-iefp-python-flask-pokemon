@@ -38,6 +38,11 @@ def add_card():
     tipos = lista_tipos()
     return render_template("adicionar.html", tipos=tipos)
 
+@pokemon_cards.route("/atualizar")
+def lista_atualizar():
+    dados = lista_cards()
+    return render_template("atualizar_1.html", lista_pokemon=dados)
+
 @pokemon_cards.route("/atualizar/<int:card_id>", methods=["GET", "POST"])
 def atualizar(card_id):
     if request.method == "POST":
@@ -50,4 +55,4 @@ def atualizar(card_id):
     
     dados = detalhes_card(card_id)
     tipos = lista_tipos()
-    return render_template("atualizar.html", dados=dados, tipos=tipos)
+    return render_template("atualizar_2.html", dados=dados, tipos=tipos)

@@ -87,7 +87,7 @@ def update_card(card_id, nome, tipo, desc):
 
     try:
         sql = "UPDATE tbl_cards SET name_c=%s, id_t=%s, desc_c=%s WHERE id_c=%s"
-        cursor.execute(sql, (card_id, nome, tipo, desc))
+        cursor.execute(sql, (nome, tipo, desc, card_id))
         conexao.commit()
         return True
     except Exception as e:

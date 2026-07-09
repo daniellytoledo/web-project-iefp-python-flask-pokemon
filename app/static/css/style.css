@@ -63,10 +63,12 @@ body {
     line-height: 1.5;
 }
 
+main {
+    flex: 1;
+}
+
 header {
     background: var(--degrade-er);
-/*     border-top: 3px solid var(--preto-suave);
-    border-bottom: 3px solid var(--preto-suave); */
     padding: 1rem 1rem 1.5rem;
     text-align: center;
     box-shadow: 0 1px 8px rgba(204, 204, 204, 0.3);
@@ -109,6 +111,15 @@ header {
     border-color: var(--vermelho-pokebola);
     color: var(--branco);
     cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
+}
+
+#p_titulo_01 {
+    font-family: "PokemonHollow", cursive;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
 }
 
 /* =====================================================
@@ -303,6 +314,119 @@ input[type="reset"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* =====================================================
+   PÁGINA "ATUALIZAR 1" 
+   Estrutura esperada no HTML:
+ 
+   <div class="pokebola_fundo">
+       <div class="pokebola_topo">
+           <p class="titulo_lista">Escolha o Pokémon</p>
+       </div>
+       <div class="pokebola_lista">
+           <a href="..." class="lista-link">Nome</a>
+           <a href="..." class="lista-link">Nome</a>
+           ...
+       </div>
+       <div class="pokebola_base"></div>
+   </div>
+ 
+   Diferente do adicionar.html (onde a tarja preta era só
+   uma linha fina), aqui ela precisa crescer para caber a
+   lista de Pokémon — por isso vira um painel escuro no
+   meio, em vez de uma faixa de poucos pixels.
+   ===================================================== */
+ 
+.titulo_lista {
+    font-size: 1.5rem;
+    color: var(--branco);
+    text-align: center;
+}
+ 
+/* Painel escuro central — onde a lista em cascata vive */
+.pokebola_lista {
+    background-color: var(--preto-suave);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 2rem;
+    gap: 0.5rem;
+}
+ 
+.lista-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+ 
+.lista-link:hover {
+    background-color: var(--vermelho-pokebola);
+    border-color: var(--vermelho-pokebola);
+    color: var(--branco);
+}
+
+/* DETALHES DO CARD DEPOIS DE ATUALIZADO */
+
+.pagina_detalhes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem 4rem;
+}
+
+.card_detalhe {
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--vermelho-pokebola);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card_detalhe .imagem_card {
+    aspect-ratio: 1 / 1;
+}
+
+.descricao_detalhe {
+    padding: 0.6rem 1.2rem 0.4rem;
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.5;
+}
+
+.hp_detalhe {
+    padding: 0 1.2rem 1.2rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.link_voltar {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--preto-suave);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.3rem;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    background-color: var(--branco);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.link_voltar:hover {
+    background-color: var(--vermelho-pokebola);
+    border-color: var(--vermelho-pokebola);
+    color: var(--branco);
 }
    
 footer {
