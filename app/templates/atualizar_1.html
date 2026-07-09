@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Atualizar Card {% endblock %}
+
+{% block intro %}
+    <p>Atualizando Pokémon...</p>
+{% endblock %}
+
+{% block content %}
+    <br>
+    <div>
+        {% for pokemon in tbl_cards %}
+            <a href="{{ url_for('pokemon_cards.') }}"></a>
+        {% endfor %}
+    </div>
+{% endblock %}

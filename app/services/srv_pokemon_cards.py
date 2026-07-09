@@ -1,4 +1,4 @@
-from app.models.rep_pokemon_cards import select_cards, select_card_id, select_types, insert_into_cards
+from app.models.rep_pokemon_cards import select_cards, select_card_id, select_types, insert_into_cards, update_card
 from pprint import pprint
 
 def lista_cards():
@@ -12,3 +12,6 @@ def lista_tipos():
 
 def adicionar_pokemon(nome, tipo, desc, img):
     return insert_into_cards(nome, tipo, desc, img)
+
+def atualizar_card(card_id, nome, tipo, desc):
+    return update_card(card_id, nome, tipo, desc)
