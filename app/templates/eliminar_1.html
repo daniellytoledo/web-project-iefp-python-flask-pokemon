@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="pokebola_fundo">
+        <div class="pokebola_topo">
+            <p class="titulo_lista">Qual card eliminar?</p>
+        </div>
+
+        <div class="pokebola_lista">
+            {% for pokemon in lista_pokemon %}
+                <a href="{{ url_for('pokemon_cards.eliminar', card_id=pokemon.id_c) }}" class="lista-link">
+                    {{ pokemon.name_c }}
+                </a>
+            {% endfor %}
+        </div>
+
+        <div class="pokebola_base"></div>
+    </div>
+{% endblock %}

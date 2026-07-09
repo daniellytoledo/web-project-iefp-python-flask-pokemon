@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} Pokemon Cards {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/uteis.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/eliminar.js') }}"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             <a href="{{ url_for('pokemon_cards.homepage') }}">Home</a>
             <a href="{{ url_for('pokemon_cards.add_card') }}">Adicionar</a>
             <a href="{{ url_for('pokemon_cards.lista_atualizar') }}">Atualizar</a>
-            <a href="">Eliminar</a>
+            <a href="{{ url_for('pokemon_cards.lista_eliminar') }}">Eliminar</a>
             <a href="">login</a>
         </div>
 

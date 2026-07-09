@@ -57,6 +57,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "FonteTexto", system-ui, -apple-system, "Segoe UI", sans-serif;
     background: var(--degrade-er);
     color: var(--preto-suave);
@@ -427,6 +430,54 @@ input[type="reset"]:hover {
     background-color: var(--vermelho-pokebola);
     border-color: var(--vermelho-pokebola);
     color: var(--branco);
+}
+
+.confirmacao_eliminar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 4rem 1rem;
+}
+
+.pokebola_icone {
+    width: 110px;
+    height: 110px;
+}
+
+.botao_confirmacao {
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.botao_voltar {
+    background-color: var(--branco);
+    color: var(--preto-suave);
+    border: 1px solid var(--borda);
+}
+
+.botao_voltar:hover {
+    background-color: var(--preto-suave);
+    color: var(--branco);
+}
+
+.botao_confirmar {
+    background-color: var(--vermelho-pokebola);
+    color: var(--branco);
+}
+
+.botao_confirmar:hover {
+    background-color: #b8280a;
+    transform: translateY(-2px);
 }
    
 footer {

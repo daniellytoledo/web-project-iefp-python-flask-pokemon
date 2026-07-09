@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Confirmar exclusão {% endblock %}
+
+{% block intro %}
+    <p id="p_titulo_01">tem certeza que deseja eliminar {{ dados.name_c }}?</p>
+{% endblock %}
+
+{% block content %}
+    <div class="confirmacao_eliminar">
+
+        <a href="{{ url_for('pokemon_cards.homepage') }}" class="botao_confirmacao botao_voltar">
+            Voltar
+        </a>
+
+        <img src="{{ url_for('static', filename='imgs/pokebola-cursor.svg') }}"
+             alt="Pokébola" class="pokebola_icone">
+
+        <form method="POST"
+              action="{{ url_for('pokemon_cards.eliminar', card_id=dados.id_c) }}"
+              id="form_eliminar">
+            <button type="submit" class="botao_confirmacao botao_confirmar">
+                Confirmar
+            </button>
+        </form>
+
+    </div>
+{% endblock %}

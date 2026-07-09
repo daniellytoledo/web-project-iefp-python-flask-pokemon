@@ -3,7 +3,7 @@ from pprint import pprint
 
 def select_cards():
     conexao = conectar_pymysql()
-    cursor = conexao.cursor()
+    cursor  = conexao.cursor()
 
     sql = """
         SELECT
@@ -27,7 +27,7 @@ def select_cards():
 
 def select_card_id(card_id):
     conexao = conectar_pymysql()
-    cursor = conexao.cursor()
+    cursor  = conexao.cursor()
 
     sql = """
         SELECT
@@ -51,7 +51,7 @@ def select_card_id(card_id):
 
 def select_types():
     conexao = conectar_pymysql()
-    cursor = conexao.cursor()
+    cursor  = conexao.cursor()
 
     sql = "SELECT id_t, name_t FROM tbl_types ORDER BY name_t"
     cursor.execute(sql)
@@ -64,7 +64,7 @@ def select_types():
 
 def insert_into_cards(nome, tipo, desc, img):
     conexao = conectar_pymysql()
-    cursor = conexao.cursor()
+    cursor  = conexao.cursor()
 
     sql = """
         INSERT INTO tbl_cards (name_c, id_t, desc_c, img_c)
@@ -83,7 +83,7 @@ def insert_into_cards(nome, tipo, desc, img):
 
 def update_card(card_id, nome, tipo, desc):
     conexao = conectar_pymysql()
-    cursor =  conexao.cursor()
+    cursor  =  conexao.cursor()
 
     try:
         sql = "UPDATE tbl_cards SET name_c=%s, id_t=%s, desc_c=%s WHERE id_c=%s"
@@ -98,7 +98,19 @@ def update_card(card_id, nome, tipo, desc):
     cursor.close()
     conexao.close()
 
+def delete_card(id):
+    conexao = conectar_pymysql()
+    cursor = conexao.cursor()
 
+    try:
+        sql    = "DELETE FROM tbl_cards WHERE id_c=%s"
+        cursor.execute(sql, (id, ))
+        conexao.commit()
+        return True
+    except Exception as e:
+        print(e)
+        conexao.rollback()
+        return False
 
 
 if __name__ == "__main__":

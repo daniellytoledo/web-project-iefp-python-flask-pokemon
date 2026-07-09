@@ -1,7 +1,7 @@
 import os
 from werkzeug.utils import secure_filename
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos, adicionar_pokemon, atualizar_card
+from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos, adicionar_pokemon, atualizar_card, eliminar_card
 
 pokemon_cards = Blueprint('pokemon_cards', __name__)
 
@@ -56,3 +56,24 @@ def atualizar(card_id):
     dados = detalhes_card(card_id)
     tipos = lista_tipos()
     return render_template("atualizar_2.html", dados=dados, tipos=tipos)
+
+@pokemon_cards.route("/eliminar")
+def lista_eliminar():
+    dados = lista_cards()
+    return render_template("eliminar_1.html", lista_pokemon=dados)
+
+
+@pokemon_cards.route("/eliminar/<int:card_id>", methods=["GET", "POST"])
+def eliminar(card_id):
+    if request.method == "POST":
+        card_eliminado = eliminar_card(card_id)
+
+        if card_eliminado:
+            flash("Card eliminado.", "flashSucesso")
+        else:
+            flash("Erro ao eliminar card.", "flashErro")
+
+        return redirect(url_for('pokemon_cards.homepage'))
+
+    dados = detalhes_card(card_id)
+    return render_template("eliminar_2.html", dados=dados)
