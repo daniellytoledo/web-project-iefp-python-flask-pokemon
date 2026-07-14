@@ -118,6 +118,11 @@ header {
     cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
 
+#div_login {
+    display: flex;
+    justify-content: center;
+}
+
 .input-login{
     width:80px;
 }
