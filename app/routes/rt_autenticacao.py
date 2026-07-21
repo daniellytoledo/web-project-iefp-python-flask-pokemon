@@ -17,11 +17,11 @@ def login():
     else:
         flash(resultado["mensagem"], "flashErro")
         
-    return redirect(url_for("cidades.homepage"))
+    return redirect(url_for("pokemon_cards.homepage"))
 
 
 @autenticacao.route("/logout")
 def logout():
     session.clear()
     flash("Sessão terminada.", "flashSucesso")
-    return redirect(url_for("cidades.homepage"))
+    return redirect(url_for("pokemon_cards.homepage"))
